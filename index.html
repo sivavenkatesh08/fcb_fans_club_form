@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Barcelona Fans Club - Page 1</title>
+    <link rel="stylesheet" href="fcb1.css">
+</head>
+<body>
+    <div class="form-container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/800px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona Logo" class="logo">
+        <h2>Join FC Barcelona Fans Club</h2>
+        
+        <form id="formPage1">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <button type="button" onclick="goToPage2()">Next</button>
+        </form>
+    </div>
+
+    <script>
+        function goToPage2() {
+            // Save form data to localStorage
+            localStorage.setItem('name', document.getElementById('name').value);
+            localStorage.setItem('dob', document.getElementById('dob').value);
+            localStorage.setItem('gender', document.getElementById('gender').value);
+            localStorage.setItem('age', document.getElementById('age').value);
+
+            // Redirect to Page 2
+            window.location.href = 'form_page2.html';
+        }
+    </script>
+</body>
+</html>
+

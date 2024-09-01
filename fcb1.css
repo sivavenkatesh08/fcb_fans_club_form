@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #A50044; /* FC Barcelona signature color */
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #004D98; /* FC Barcelona blue */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #FFCD00; /* FC Barcelona yellow */
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    color: #FFF;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+input[type="password"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFF;
+    color: #333;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="date"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder {
+    color: #999;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #FFCD00; /* FC Barcelona yellow */
+    color: #004D98; /* FC Barcelona blue */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #FFC72C; /* Slightly lighter yellow */
+}
+
+a {
+    color: #FFCD00; /* FC Barcelona yellow */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.achievements {
+    text-align: left;
+}
+
+.achievements h3 {
+    color: #FFCD00; /* FC Barcelona yellow */
+    margin-top: 20px;
+}
+
+.achievements p {
+    color: #FFF;
+}
+
+.achievements img {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+}
