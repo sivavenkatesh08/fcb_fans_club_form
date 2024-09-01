@@ -105,3 +105,25 @@ a:hover {
     margin-top: 10px;
     border-radius: 5px;
 }
+
+/* Added styles for login and sign-up buttons */
+.auth-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth-button {
+    width: 48%;
+    padding: 10px;
+    background-color: #FFCD00; /* FC Barcelona yellow */
+    color: #004D98; /* FC Barcelona blue */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background-color: #FFC72C; /* Slightly lighter yellow */
+}
