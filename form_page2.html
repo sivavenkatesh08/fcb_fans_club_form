@@ -11,7 +11,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/800px-FC_Barcelona_%28crest%29.svg.png" alt="FC Barcelona Logo" class="logo">
         <h2>Join FC Barcelona Fans Club</h2>
         
-        <form id="formPage2" action="success.html" method="POST">
+        <form id="formPage2">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
             
@@ -23,9 +23,28 @@
             
             <label for="fav_player">Favorite Player:</label>
             <input type="text" id="fav_player" name="fav_player" required>
-
-            <button type="submit">Submit</button>
+            
+            <button type="button" onclick="submitForm()">Submit</button>
         </form>
+
+        <!-- New Section for Login and Sign Up Buttons -->
+        <div class="auth-buttons">
+            <button class="auth-button" onclick="window.location.href='login.html'">Login</button>
+            <button class="auth-button" onclick="window.location.href='signup.html'">Sign Up</button>
+        </div>
     </div>
+
+    <script>
+        function submitForm() {
+            // Save form data to localStorage
+            localStorage.setItem('email', document.getElementById('email').value);
+            localStorage.setItem('phone', document.getElementById('phone').value);
+            localStorage.setItem('country', document.getElementById('country').value);
+            localStorage.setItem('fav_player', document.getElementById('fav_player').value);
+
+            // Redirect to Success page
+            window.location.href = 'success.html';
+        }
+    </script>
 </body>
 </html>
