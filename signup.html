@@ -10,7 +10,7 @@
     <div class="form-container">
         <h2>Sign Up</h2>
         
-        <form method="GET" action="login.html">
+        <form id="signupForm" method="GET" action="login.html">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
@@ -23,8 +23,40 @@
             <label for="confirm_password">Confirm Password:</label>
             <input type="password" id="confirm_password" name="confirm_password" required>
 
-            <button type="submit">Sign Up</button>
+            <button type="button" onclick="submitForm()">Sign Up</button>
         </form>
     </div>
+
+    <script>
+        function submitForm() {
+            // Get form values
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            // Validate if fields are empty
+            if (email === "" || username === "" || password === "" || confirmPassword === "") {
+                alert("Please fill in all fields before submitting.");
+                return;
+            }
+
+            // Validate email format
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please check your entries.");
+                return;
+            }
+
+            // Submit the form if all validations pass
+            document.getElementById('signupForm').submit();
+        }
+    </script>
 </body>
 </html>
