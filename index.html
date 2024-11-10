@@ -35,11 +35,29 @@
 
     <script>
         function submitForm() {
+            // Get form values
+            const name = document.getElementById('name').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+
+            // Validate form fields
+            if (name === "" || dob === "" || gender === "" || age === "") {
+                alert("Please fill out all fields before proceeding.");
+                return; // Stop form submission if validation fails
+            }
+
+            // Validate age (ensure it's a number and above a certain threshold)
+            if (isNaN(age) || age <= 0) {
+                alert("Please enter a valid age.");
+                return;
+            }
+
             // Save form data to localStorage
-            localStorage.setItem('name', document.getElementById('name').value);
-            localStorage.setItem('dob', document.getElementById('dob').value);
-            localStorage.setItem('gender', document.getElementById('gender').value);
-            localStorage.setItem('age', document.getElementById('age').value);
+            localStorage.setItem('name', name);
+            localStorage.setItem('dob', dob);
+            localStorage.setItem('gender', gender);
+            localStorage.setItem('age', age);
 
             // Redirect to Page 2
             window.location.href = 'form_page2.html';
