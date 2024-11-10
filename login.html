@@ -10,17 +10,41 @@
     <div class="form-container">
         <h2>Login</h2>
         
-        <form method="GET" action="achievements.html">
+        <form id="loginForm" method="GET" action="achievements.html">
             <label for="username">Username or Email:</label>
             <input type="text" id="username" name="username" required>
             
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Login</button>
+            <button type="button" onclick="submitForm()">Login</button>
         </form>
 
         <p>New member? <a href="signup.html">Sign up here</a></p>
     </div>
+
+    <script>
+        function submitForm() {
+            // Get form values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validate if fields are empty
+            if (username === "" || password === "") {
+                alert("Please fill in both fields before submitting.");
+                return;
+            }
+
+            // Validate email format if username is an email
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (username.match(emailPattern) && !username.includes('@')) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Submit the form if all validations pass
+            document.getElementById('loginForm').submit();
+        }
+    </script>
 </body>
 </html>
